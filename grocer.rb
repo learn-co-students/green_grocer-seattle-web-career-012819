@@ -48,8 +48,8 @@ def checkout(cart, coupons)
     control_cart.each do |item, hash|
       count += (hash[:price]*hash[:count])
     end
-  if total >= 100
-    total *=0.9
+  if count >= 100
+    count *=0.9
   end
   count 
   
