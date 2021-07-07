@@ -112,10 +112,11 @@ describe "Grocer" do
         avocado = find_item('AVOCADO')
         cheese = find_item('CHEESE')
         cart = Array.new(4, cheese)
+        
         3.times { cart << avocado }
         consolidated_cart = consolidate_cart(cart)
+        
         coupons = [find_coupon("AVOCADO"), find_coupon("CHEESE")]
-
         multiple_coupons = apply_coupons(consolidated_cart, coupons)
 
         ["AVOCADO", "CHEESE"].each { |item| expect(multiple_coupons[item][:count]).to eq(1) }
